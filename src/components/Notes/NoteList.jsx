@@ -1,17 +1,19 @@
 import Note from "./Note";
-export default function NoteList ({ notes, onDelete }) {
+export default function NoteList ({ notes, onDelete, onUpdate }) {
 
     if (notes === 0) {
-        return<p> No notes yet!</p>
+        return<p>No notes yet!</p>
     }
 
     return (
-        <div className="flex justify-center dark:text-gray-400 dark:bg-gray-800 items-center flex-col">
+        <div className="w-full resize-none border-none focus:ring-0 md:text-md text-white">
             {notes.map((note) => (
                 <Note
                 key={note.id}
                 text={note.text}
                 id={note.id}
+                date={note.date}
+                onUpdate={onUpdate}
                 onDelete={ () => onDelete(note.id) }
                 />
             ))}

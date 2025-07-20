@@ -1,19 +1,36 @@
+import { useState } from "react"
+import NoteEditor from "./NoteEdit"
 
-// text , onDelete, and id are all props, children from our App,jsx
-// text gets defined in our NoteForm for our input
-// then gets added to our setNotes State
-// so when Note is rendered we can pass the text data
-// onDelete is passed from App.jsx because onDelete once called by a click event
-// references in reverse 
-// button(onclick) --> looks at prop onDelete -->
-// onDelete calls deleteNote function in App.jsx
-// passing allows us to pass the deleteNote Function which is invoked when button is clicked. 
-export default function Note ({ text, onDelete, id }) {
+
+
+
+export default function Note ({ text, onDelete, onUpdate, id, date }) {
+    
+    const [ isEditing, setIsEditing ] = useState(false)
+    
     return (
-        <div className="dark:text-gray-400">
-            <p>{text}</p>
-            <p>ID Number: {id}</p>
-            <button onClick={onDelete} className="border 2 border-solid">Delete</button>
+        <div>
+            {isEditing ? (
+                <NoteEditor
+                id={id}
+                initialText={text}
+                onSave={(id, newText) => {
+                    onUpdate(id, newText)
+                    setIsEditing(false)
+                }}
+                onCancel={() => setIsEditing(false)}
+                />
+            ) : (
+            <div className="container mx-auto px-15 py-8 border 2 shadow-xl m-3 rounded-md">
+                <p className="font-serif">{text}</p>
+                <p className="font-serif">ID: {id}</p>
+                <p className="font-serif">Created On: {date}</p>
+                <div>
+                    <button onClick={() => setIsEditing(true)} className="border 2 border-solid m-2 px-4 rounded-full bg-violet-500 hover:bg-violet-600 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700">Edit</button>
+                    <button onClick={() => onDelete(id)} className="border 2 border-solid m-2 px-4 rounded-full bg-violet-500 hover:bg-violet-600 focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 active:bg-violet-700">Delete</button>
+                </div>
+            </div>
+        )}
         </div>
     )
 }
