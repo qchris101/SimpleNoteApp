@@ -17,27 +17,31 @@ export default function NoteForm ({ addNote }) {
         setText('')
         setError('')
     }
-
-    return (
-        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 max-w-3xl mx-auto text-gray-800 dark:text-gray-200" >
-        
-        <div>
-
-        <form onSubmit={handleSubmit} className="mb-8 text-black rounded-md">
-            <input
-            type="text"
-            value={text}
-            placeholder="Enter a Note"
-            onChange={(e) => setText(e.target.value)}
-            className="peer w-full bg-transparent outline-none px-4 text-base rounded-xl bg-white border border-[#4070f4] focus:shadow-md"
-            />
-            <div className="flex items-center justify-end gap-2 p-1.5">
-        <button type="submit" className="border 2">Add</button>
-
-        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
-            </div>
-        </form>
+return (
+  <div className="w-full flex justify-center border-4">
+    <form onSubmit={handleSubmit} className="border-4 rounded-md p-4 w-full max-w-lg bg-white dark:bg-gray-800">
+      <div className="flex space-x-2">
+        <input
+          type="text"
+          value={text}
+          placeholder="Enter a Note"
+          onChange={(e) => setText(e.target.value)}
+          className="flex-1 font-[proxima_soft] rounded-md bg-gray-100 px-4 py-2.5 text-gray-700 focus:outline-blue-500"
+        />
+        <button 
+          type="submit" 
+          className="font-[proxima_soft] font-semibold bg-blue-500 px-4 py-2.5 text-white rounded-md hover:bg-blue-600"
+        >
+          Add
+        </button>
+      </div>
+      
+      {error && (
+        <div className="flex justify-end pt-2">
+          <p className="text-red-500 text-sm">{error}</p>
         </div>
-    </div>
-    )
+      )}
+    </form>
+  </div>
+)
 }

@@ -19,7 +19,7 @@ export default function Footer () {
     {/* Right: Socials or Copyright */}
     <div className="text-sm text-gray-400">
       Built with 💻 by Christian
-      <a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/education" title="education icons">, Education icons created by Freepik - Flaticon</a>
     </div>
   </div>
 </footer>
