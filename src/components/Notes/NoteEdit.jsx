@@ -16,7 +16,7 @@ export default function NoteEditor ({ id, initialText, onSave, onCancel }) {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button className="border 2 border-solid m-2 p-1 rounded-md" onClick={handleSave}>Save</button>
+            <button className="border 2 border-solid m-2 p-1 rounded-mdg" onClick={handleSave}>Save</button>
             <button className="border 2 border-solid m-2 p-1 rounded-md" onClick={onCancel}>Cancel</button>
         </div>
     )
