@@ -21,7 +21,7 @@ export default function Note ({ text, onDelete, onUpdate, id, date }) {
                 onCancel={() => setIsEditing(false)}
                 />
             ) : (
-            <div className="container mx-auto px-15 py-8 border 2 shadow-xl m-3 rounded-md">
+            <div className="text-black font-[400] text-[16px] container mx-auto px-15 py-8 border 2 shadow-xl m-3 rounded-md font-[proxima_soft] bg-white">
                 <p className="font-[proxima_soft]">{text}</p>
                 <p className="font-[proxima_soft]">ID: {id}</p>
                 <p className="font-[proxima_soft]">Created On: {date}</p>

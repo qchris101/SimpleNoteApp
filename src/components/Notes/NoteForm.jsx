@@ -18,19 +18,19 @@ export default function NoteForm ({ addNote }) {
         setError('')
     }
 return (
-  <div className="w-full flex justify-center border-4">
-    <form onSubmit={handleSubmit} className="border-4 rounded-md p-4 w-full max-w-lg bg-white dark:bg-gray-800">
+  <div className="w-full flex font-[400] text-[16px] font-[proxina_soft] justify-center">
+    <form onSubmit={handleSubmit} className="rounded-md p-4 w-full max-w-lg bg-white">
       <div className="flex space-x-2">
         <input
           type="text"
           value={text}
           placeholder="Enter a Note"
           onChange={(e) => setText(e.target.value)}
-          className="flex-1 font-[proxima_soft] rounded-md bg-gray-100 px-4 py-2.5 text-gray-700 focus:outline-blue-500"
+          className="flex-1 rounded-md bg-gray-200 px-4 py-2.5 text-gray-700 focus:outline-blue-500"
         />
         <button 
           type="submit" 
-          className="font-[proxima_soft] font-semibold bg-blue-500 px-4 py-2.5 text-white rounded-md hover:bg-blue-600"
+          className="bg-blue-500 px-4 py-2.5 text-white rounded-md hover:bg-blue-600"
         >
           Add
         </button>

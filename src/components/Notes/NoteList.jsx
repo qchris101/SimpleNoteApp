@@ -6,7 +6,7 @@ export default function NoteList ({ notes, onDelete, onUpdate }) {
     }
 
     return (
-        <div className="w-full resize-none border-none focus:ring-0 md:text-md text-white">
+        <div className="w-full resize-none border-none focus:ring-0 text-[16px]">
             {notes.map((note) => (
                 <Note
                 key={note.id}
