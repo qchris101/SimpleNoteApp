@@ -1,12 +1,13 @@
 import Note from "./Note";
 export default function NoteList ({ notes, onDelete, onUpdate }) {
 
-    if (notes === 0) {
+    if (notes.length === 0) {
         return<p>No notes yet!</p>
     }
 
     return (
-        <div className="w-full resize-none border-none focus:ring-0 text-[16px]">
+        <div className="w-full resize-none focus:ring-0 text-[16px] my-10">
+            {/* <p>Recent</p> */}
             {notes.map((note) => (
                 <Note
                 key={note.id}
