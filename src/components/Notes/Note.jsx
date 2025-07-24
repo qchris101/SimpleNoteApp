@@ -22,6 +22,7 @@ export default function Note ({ text, onDelete, onUpdate, id, date }) {
                 />
             ) : (
             <div className="text-black shadow-xl font-[400] text-[16px] border-b-2 border-gray-100 container max-w-4xl mx-auto px-15 py-8 font-[proxima_soft] bg-white">
+                <div>Star/Radio Toggle</div>
                 <div className="flex flex-col justify-between h-full min-h-[180px]">
                 <p className="text-[18px]">{text}</p>
                     

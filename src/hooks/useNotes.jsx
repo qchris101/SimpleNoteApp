@@ -17,6 +17,18 @@ export function useNotes() {
             note.id === id ? {...note, text: newText } : note)
         )
     }
+
+    // const favNote = (id, Boolean?) = {
+    // maybe newState? => const [ favNotes, setFavNotes ] = useState([])
+    // setFavNotes(notes.map((note) => 
+    //      note.id ===id ? {...note, favorite: boolean (true)} : note )
+    //      )
+    //}
+
+    // may newState also?
+    // const trashNote = (id) => {
+    //    setTrashNote(notes.filter((note) => note.id !== id))
+    //}
     return { notes, addNote, deleteNote, updateNote}
 }
 

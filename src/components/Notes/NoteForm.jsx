@@ -19,7 +19,12 @@ export default function NoteForm ({ addNote }) {
     }
 return (
   <div className="w-full flex font-[400] text-[16px] font-[proxina_soft] justify-center">
-    <form onSubmit={handleSubmit} className="shadow-xl rounded-md p-4 w-full max-w-lg bg-white">
+    <div>
+      <p>Add</p>
+      <p>Favorite</p>
+      <p>Trash</p>
+    </div>
+    <form onSubmit={handleSubmit} className="shadow-xl  rounded-md p-4 w-full max-w-lg bg-white">
       <div className="flex space-x-2 ">
         <input
           type="text"

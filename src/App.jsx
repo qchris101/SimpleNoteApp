@@ -10,6 +10,8 @@ import Header from "./components/Header/Header";
 
 import Footer from "./components/Footer/Footer";
 
+// import SideBarNav from "./components/SideBarNav/SideBarNav.jsx"
+
 export default function App() {
 
 const { notes, addNote, deleteNote, updateNote } = useNotes()
@@ -17,6 +19,10 @@ const { notes, addNote, deleteNote, updateNote } = useNotes()
   return (
     <>
       <Header/>
+      {/* 
+      <SideBarNav/>
+      
+      */}
 
       <NoteForm 
       addNote={addNote} />
