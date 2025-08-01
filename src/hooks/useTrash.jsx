@@ -1,4 +1,16 @@
-  // may newState also?
-    // const trashNote = (id) => {
-    //    setTrashNote(notes.filter((note) => note.id !== id))
-    //}
+
+
+
+import { useState } from "react";
+
+
+export default function useTrash() {
+
+  const [trashedNotes, setTrashedNotes] = useState([]);
+
+  const trashNote = (note) => {
+    setTrashedNotes([...trashedNotes, note]);
+  };
+
+  return { trashedNotes, trashNote };
+}

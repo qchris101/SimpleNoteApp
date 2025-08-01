@@ -1,6 +1,6 @@
 import Note from "./Note";
 export default function NoteList ({ notes, onDelete, onUpdate }) {
-
+    
     if (notes.length === 0) {
         return<p>No notes yet!</p>
     }
@@ -19,5 +19,5 @@ export default function NoteList ({ notes, onDelete, onUpdate }) {
                 />
             ))}
         </div>
-    )
+    )   
 }

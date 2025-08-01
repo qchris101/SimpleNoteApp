@@ -16,18 +16,14 @@
 
 
 // Will looking something like: 
-//      export default function SideBar() {
-//          return (
-//              <> 
-                {/* <div>
-                        <NoteAdd />
-                    </div>
-                    <div>
-                        <NoteTrash/>
-                    </div>
-                    <div>
-                        <NoteFav />
-                    </div>
-                </>   */}
-//      )
-//  }
+
+import { Link } from "react-router-dom";
+
+export default function SideBarNav() {
+  return (
+    <nav className="border 2 p-4 flex flex-col gap-4">
+      <Link to="/">Notes</Link>
+      <Link to="/trash">Trash</Link>
+    </nav>
+  );
+}
