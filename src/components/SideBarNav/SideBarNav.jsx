@@ -21,9 +21,13 @@ import { Link } from "react-router-dom";
 
 export default function SideBarNav() {
   return (
+    <div className="">
+
     <nav className="border 2 p-4 flex flex-col gap-4">
-      <Link to="/">Notes</Link>
-      <Link to="/trash">Trash</Link>
+      <Link className="btn" to="/">Notes</Link>
+      <Link className="btn" to="/Trash">Trash</Link>
+      <Link className="btn" to="/Favorites">Favorites</Link>
     </nav>
+    </div>
   );
 }

@@ -2,7 +2,7 @@
 export default function Footer () {
 
     return(
-        <footer className="bg-gray-500 text-white py-6 mt-10">
+        <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
     {/* Left: Brand or Logo */}
     <div className="text-md font-[400] mb-4 md:mb-0">

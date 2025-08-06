@@ -4,7 +4,7 @@ import useNotes  from '../hooks/useNotes';
 // import useTrash  from '../hooks/useTrash';
 
 export default function NotesPage() {
-  const { notes, addNote, updateNote, deleteNote, id } = useNotes();
+  const { notes, addNote, updateNote, trashNote, id } = useNotes();
   
   return (
     <div>
@@ -12,7 +12,7 @@ export default function NotesPage() {
       <NoteList
         key={id}
         notes={notes}
-        onDelete={deleteNote}
+        onDelete={trashNote}
         onUpdate={updateNote}
       />
       

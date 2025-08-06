@@ -6,12 +6,13 @@ import NoteList from "./components/Notes/NoteList";
 // We import our Note component which handles how we organize the data after its entered
 
 // import Header from "./components/Header/Header";
-import NotesPage from "./pages/NotesPage";
-import Footer from "./components/Footer/Footer";
-import SideBarNav from "./components/SideBarNav/SideBarNav";
 import { Route, Routes } from "react-router-dom";
-import TrashPage from "../src/pages/TrashPage"
+import SideBarNav from "./components/SideBarNav/SideBarNav";
 import NotesProvider from "./Context/NotesProvider";
+import NotesPage from "./pages/NotesPage";
+import TrashPage from "../src/pages/TrashPage"
+import FavoritesPage from "./pages/FavoritesPage";
+import Footer from "./components/Footer/Footer";
 
 // import SideBarNav from "./components/SideBarNav/SideBarNav.jsx"
 
@@ -27,7 +28,8 @@ export default function App() {
         <div>
           <Routes>
             <Route path="/" element={<NotesPage />} />
-            <Route path="/trash" element={<TrashPage />} />
+            <Route path="/Trash" element={<TrashPage />} />
+            <Route path="/Favorites" element={<FavoritesPage />} />
           </Routes>
         </div>
       </div>
