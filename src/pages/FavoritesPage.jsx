@@ -17,18 +17,22 @@ export default function FavoritesPage() {
 }
 
     return(
-        <div>
+        <div className="card">
+            <div className="card-body">
             {favoriteNotes.map((note) => (
                 <Note
                 key={note.id}
                 id={note.id}
                 text={note.text}
                 date={note.date}
+                favorite={true}
                 onUpdate={updateNote}
                 onDelete={deleteNote}
                 onToggleFavorite={() => toggleFavorite(note.id)}
                 />
             ))}
+
+            </div>
         </div>
     )
 }

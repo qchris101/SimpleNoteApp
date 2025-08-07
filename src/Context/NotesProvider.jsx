@@ -20,9 +20,11 @@ export default function NotesProvider({ children }) {
         setNotes((prevNotes) => [...prevNotes, newNote])
     }
 
-    const deleteNote = (id) => {
+    const deleteNote = (id,favorite) => {
+        if(!favorite){
+            setTrashedNotes((prev) => prev.filter((note) => note.id !== id ))
 
-        setTrashedNotes((prev) => prev.filter((note) => note.id !== id ))
+        }
     }
 
     const trashNote = (id) => {
@@ -50,9 +52,12 @@ export default function NotesProvider({ children }) {
     }
 
     const toggleFavorite = (id) => {
+        if(!notes.favorite){
             setNotes((prevNotes) =>
                 prevNotes.map((note) => note.id === id ? { ...note, favorite: !note.favorite } : note)
-  );
+        );
+        
+    }
 };
 
     return(

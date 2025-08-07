@@ -15,20 +15,20 @@ export default function TrashPage() {
 
     return (
     <>
-    <h2>Trashed Notes</h2>
-      <div className="card bg-gray-600 w-auto">
-        <ul>
+    <h2 className='flex justify-center my-2'>Trashed Notes</h2>
+      <div className="card w-auto  flex justify-center shadow-xl font-[400] text-[16px]  container max-w-4xl mx-auto px-15 py-8 font-[proxima_soft]ax-w-3/4">
+        <ul className='flex justify-center'>
           {trashedNotes.map(({ id, text, date}) => (
             <li key={id}>
               <div className='card-body'>
                 <p>{text}</p>
                 <p>ID: {id}</p>
                 <p>Deleted on: {date}</p>
-              <div className='card-actions'>
+              
                 <button className="btn" onClick={() => restoreNote(id)}>Restore</button>
                 <button className="btn" onClick={() => deleteNote(id)}>Delete</button>
               </div>
-              </div>
+
             </li>
           ))}
         </ul>

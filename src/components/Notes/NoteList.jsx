@@ -18,7 +18,6 @@ export default function NoteList ({ notes, onDelete, onUpdate, ToggleFavorite })
         <div className="w-full card resize-none focus:ring-0 text-[16px] my-10">
             <div className="card-body">
 
-            {console.log("This is NoteList.jsx")}
             
             {notes.map((note) => (
                 <Note
