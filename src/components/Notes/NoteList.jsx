@@ -1,6 +1,6 @@
 
 import Note from "./Note";
-export default function NoteList ({ notes, onDelete, onUpdate, ToggleFavorite }) {
+export default function NoteList ({ notes, onDelete, onUpdate, ToggleFavorite, }) {
 
    
     
@@ -21,9 +21,11 @@ export default function NoteList ({ notes, onDelete, onUpdate, ToggleFavorite })
             
             {notes.map((note) => (
                 <Note
+                title={note.title}
                 key={note.id}
                 text={note.text}
                 date={note.date}
+                favorite={note.favorite}
                 id={note.id}
                 onUpdate={onUpdate}
                 onToggleFavorite={() => ToggleFavorite(note.id)}

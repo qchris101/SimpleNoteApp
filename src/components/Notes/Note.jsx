@@ -5,7 +5,7 @@ import useNotes from "../../hooks/useNotes"
 
 
 
-export default function Note ({ text, onDelete, onUpdate, id, date, favorite }) {
+export default function Note ({ title, text, onDelete, onUpdate, id, date, favorite }) {
     
     const [ isEditing, setIsEditing ] = useState(false)
     const { toggleFavorite } = useNotes()
@@ -14,9 +14,10 @@ export default function Note ({ text, onDelete, onUpdate, id, date, favorite }) 
             {isEditing ? (
                 <NoteEditor
                 id={id}
+                initialTitle={title}
                 initialText={text}
-                onSave={(id, newText) => {
-                    onUpdate(id, newText)
+                onSave={(id, newText,newTitle) => {
+                    onUpdate(id, newText,newTitle)
                     setIsEditing(false)
                 }}
                 onCancel={() => setIsEditing(false)}
@@ -28,12 +29,13 @@ export default function Note ({ text, onDelete, onUpdate, id, date, favorite }) 
                      type="checkbox"
                      checked={favorite}
                      onChange={() => toggleFavorite(id)}
-                     className=" checkbox border-indigo-600 bg-gray-500 checked:border-yellow-500 checked:bg-yellow-400 checked:text-orange-800"
+                     className="checkbox border-indigo-600 bg-gray-500 checked:border-yellow-500 checked:bg-yellow-400 checked:text-orange-800"
                     />
                 </div>
                 <div className="flex flex-col justify-between h-full min-h-[180px]">
-                     <p className="text-[18px]">{text}</p>
-                    <div className>
+                    <h2 className="card-title">{title}</h2>
+                     <p className="text-[14px]">{text}</p>
+                    <div>
                      <p className="px-2 pt-2 mt-2 text-[14px]">ID: {id}</p>
                      <p className="px-2 py-1.5 text-[14px] ">Created On: {date}</p>
 

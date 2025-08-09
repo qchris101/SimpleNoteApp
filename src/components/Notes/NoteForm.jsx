@@ -4,17 +4,19 @@ import { useState } from "react";
 export default function NoteForm ({ addNote }) {        
 
     const [ text, setText ] = useState("")
+    const [ title, setTitle ] = useState("")
     const [ error, setError] = useState("")
     
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if(!text.trim()) {
+        if(!text.trim() || !title.trim()) {
             setError("Please enter a note!")
             return
         }
-        addNote(text)
+        addNote(title, text)
         setText('')
+        setTitle('')
         setError('')
     }
 return (
@@ -22,10 +24,17 @@ return (
    
     <form onSubmit={handleSubmit} className="shadow-xl  rounded-md p-4 my-4 w-full max-w-lg">
       <div className="flex space-x-2 ">
+        <input
+          type="text"
+          value={title}
+          placeholder="Note Title..."
+          onChange={(e) => setTitle(e.target.value)}
+          className="input flex-1 rounded-md  px-4 py-2.5  focus:outline-gray-500"
+        />
         <textarea
           type="text"
           value={text}
-          placeholder="Enter a Note"
+          placeholder="Start writing..."
           onChange={(e) => setText(e.target.value)}
           className="input-lg flex-1 rounded-md  px-4 py-2.5  focus:outline-gray-500"
         />
@@ -37,13 +46,15 @@ return (
         </button>
     
       </div>
-      
+    </form>
+      <div>
+
       {error && (
-        <div className="flex justify-end pt-2">
-          <p className="text-red-500 text-sm">{error}</p>
+        <div className="flex card pt-2">
+          <p className="alert alert-warning">{error}</p>
         </div>
       )}
-    </form>
+      </div>
   </div>
 )
 }

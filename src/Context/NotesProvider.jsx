@@ -9,9 +9,11 @@ export default function NotesProvider({ children }) {
     const [ trashedNotes, setTrashedNotes ] = useState([])
 
 
-    const addNote = (text) => {
+
+    const addNote = (title, text) => {
        
         const newNote = {
+            title,
             id: crypto.randomUUID().toString().substring(0,12),
             text, 
             date: new Date().toISOString().split("T")[0],
@@ -28,6 +30,7 @@ export default function NotesProvider({ children }) {
     }
 
     const trashNote = (id) => {
+    
         const noteToTrash = notes.find((note) => note.id === id)
             if(noteToTrash) {
                 setTrashedNotes((prevTrash) => [ ...prevTrash, noteToTrash])
@@ -35,11 +38,11 @@ export default function NotesProvider({ children }) {
             }
     }
 
-    const updateNote = (id, newText) => {
+    const updateNote = (id, newText, newTitle) => {
 
         setNotes((prevNotes) => 
             prevNotes.map((note) =>
-            note.id === id ? { ...note, text: newText } : note)
+            note.id === id ? { ...note, text: newText, title: newTitle } : note)
         )
     }
     const restoreNote = (id) => {

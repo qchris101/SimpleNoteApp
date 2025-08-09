@@ -2,7 +2,7 @@ import useNotes from "../hooks/useNotes";
 import Note from "../components/Notes/Note";
 
 export default function FavoritesPage() {
-    const {notes, updateNote, deleteNote, toggleFavorite } = useNotes()
+    const {notes, updateNote, trashNote, toggleFavorite } = useNotes()
 
     const favoriteNotes = notes.filter((note) => note.favorite)
 
@@ -22,12 +22,13 @@ export default function FavoritesPage() {
             {favoriteNotes.map((note) => (
                 <Note
                 key={note.id}
+                title={note.title}
                 id={note.id}
                 text={note.text}
                 date={note.date}
                 favorite={true}
                 onUpdate={updateNote}
-                onDelete={deleteNote}
+                onDelete={() => trashNote(note.id)}
                 onToggleFavorite={() => toggleFavorite(note.id)}
                 />
             ))}

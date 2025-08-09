@@ -19,10 +19,12 @@
 
 import { Link } from "react-router-dom";
 
+import ThemeToggle from "../themeToggle";
+
 export default function SideBarNav() {
   return (
 
-  <div className="navbar bg-white shadow-sm">
+  <div className="navbar  shadow-sm">
     <div className="navbar-start">
       <div className="dropdown">
         <div tabIndex={0} role="button" className="btn btn-ghost btn-square">
@@ -50,6 +52,7 @@ export default function SideBarNav() {
   <div className="navbar-end">
     <input className="input" placeholder="Search" type="text">
     </input>
+      <ThemeToggle />
   </div>
 </div>
   );
