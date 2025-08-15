@@ -11,9 +11,10 @@ export default function ThemeToggle() {
     }, [theme])
 
     return (
-    <label className="swap swap-rotate">
-      {/* Hidden checkbox for toggle behavior */}
+    <label className="swap swap-rotate mx-2.5 mb-2">
+      
       <input
+  
         type="checkbox"
         onChange={(e) => setTheme(e.target.checked ? "dark" : "lofi")}
         checked={theme === "dark"}

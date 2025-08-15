@@ -11,18 +11,18 @@ export default function NoteEditor ({ id, initialText, initialTitle, onSave, onC
     }
 
     return (
-        <div className="flex justify-center container max-w-4xl mx-auto px-15 py-8 shadow-xl m-3 rounded-md bg-white font-[400] text-[16px] font-[proxina_soft] ">
-            <textarea
-                className="textarea-l flex-1 rounded-md  bg-gray-100 px-4 py-2.5 text-gray-700 focus:outline-blue-500"
+        <div className="flex justify-center flex-col container max-w-4xl mx-auto px-15 py-8 shadow-xl m-3 rounded-md bg-white font-[400] text-[16px] font-[proxina_soft] ">
+            <input
+                className="input rounded-md h-full w-full max-h-[40px]  px-4 py-2.5  focus:outline-gray-500"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
             <textarea
-                className="textarea-l flex-1 rounded-md  bg-gray-100 px-4 py-2.5 text-gray-700 focus:outline-blue-500"
+                className="input-md rounded-lg h-full min-h-[200px] w-full  px-4 mt-2 py-2.5 border focus:outline-gray-500"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <div className="card-actions">  
+            <div className="card-actions justify-end mt-2">  
                 <button className="btn" onClick={handleSave}>Save</button>
                 <button className="btn" onClick={onCancel}>Cancel</button>
             </div>

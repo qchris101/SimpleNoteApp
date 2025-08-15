@@ -16,14 +16,15 @@ export default function TrashPage() {
     return (
     <>
     <h2 className='flex justify-center my-2'>Trashed Notes</h2>
-      <div className="card w-auto  flex justify-center shadow-xl font-[400] text-[16px]  container max-w-4xl mx-auto px-15 py-8 font-[proxima_soft]ax-w-3/4">
-        <ul className='flex justify-center'>
+      <div className='w-full min-w-[500px] rounded-lg  flex justify-center'>
+        <ul>
           {trashedNotes.map(({ id, text, date, title}) => (
-            <li key={id}>
-              <div className='card-body'>
+            <li  className="m-3"
+            key={id}>
+              <div className="card flex shadow-xl font-[400] text-[16px] px-15 py-8 font-[proxima_soft]">
               <h2 className='card-title'>{title}</h2>
                 <p>{text}</p>
-                <p>ID: {id}</p>
+        
                 <p>Deleted on: {date}</p>
               
               <div className='card-actions'> 

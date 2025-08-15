@@ -20,6 +20,8 @@
 import { Link } from "react-router-dom";
 
 import ThemeToggle from "../themeToggle";
+import NoteFilter from "../Notes/NoteFilter";
+
 
 export default function SideBarNav() {
   return (
@@ -50,15 +52,10 @@ export default function SideBarNav() {
     <Link className="btn btn-ghost text-xl" to="/">NotesUI</Link>
   </div>
   <div className="navbar-end">
-    <input className="input" placeholder="Search" type="text">
-    </input>
+      {/* <NoteFilter /> */}
       <ThemeToggle />
   </div>
 </div>
   );
 }
-    // <nav className="p-4 flex gap-4">
-    //   <Link className="btn" to="/">Notes</Link>
-    //   <Link className="btn" to="/Trash">Trash</Link>
-    //   <Link className="btn" to="/Favorites">Favorites</Link>
-    // </nav>
+    

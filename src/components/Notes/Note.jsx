@@ -5,7 +5,7 @@ import useNotes from "../../hooks/useNotes"
 
 
 
-export default function Note ({ title, text, onDelete, onUpdate, id, date, favorite }) {
+export default function Note ({ title, text, onDelete, onUpdate, id, date, favorite}) {
     
     const [ isEditing, setIsEditing ] = useState(false)
     const { toggleFavorite } = useNotes()
@@ -29,7 +29,7 @@ export default function Note ({ title, text, onDelete, onUpdate, id, date, favor
                      type="checkbox"
                      checked={favorite}
                      onChange={() => toggleFavorite(id)}
-                     className="checkbox border-indigo-600 bg-gray-500 checked:border-yellow-500 checked:bg-yellow-400 checked:text-orange-800"
+                     className="checkbox bg-gray-500 checked:border-yellow-500 checked:bg-yellow-400 checked:text-orange-800"
                     />
                 </div>
                 <div className="flex flex-col justify-between h-full min-h-[180px]">

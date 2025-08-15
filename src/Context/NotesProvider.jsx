@@ -9,7 +9,6 @@ export default function NotesProvider({ children }) {
     const [ trashedNotes, setTrashedNotes ] = useState([])
 
 
-
     const addNote = (title, text) => {
        
         const newNote = {
@@ -22,11 +21,9 @@ export default function NotesProvider({ children }) {
         setNotes((prevNotes) => [...prevNotes, newNote])
     }
 
-    const deleteNote = (id,favorite) => {
-        if(!favorite){
+    const deleteNote = (id) => {
             setTrashedNotes((prev) => prev.filter((note) => note.id !== id ))
 
-        }
     }
 
     const trashNote = (id) => {
@@ -57,14 +54,16 @@ export default function NotesProvider({ children }) {
     const toggleFavorite = (id) => {
         if(!notes.favorite){
             setNotes((prevNotes) =>
-                prevNotes.map((note) => note.id === id ? { ...note, favorite: !note.favorite } : note)
-        );
-        
+                prevNotes.map((note) => note.id === id ? { ...note, favorite: !note.favorite } : note))
+        }
     }
-};
+
+    const filterNotes = (searchTerm) => {
+        notes.filter((note) => note.title.toLowerCase().includes(searchTerm.toLowerCase()))
+    }
 
     return(
-        <NotesContext.Provider value={{ notes, trashedNotes, addNote, deleteNote, updateNote, trashNote, restoreNote, toggleFavorite}}>
+        <NotesContext.Provider value={{ notes, trashedNotes, addNote, deleteNote, updateNote, trashNote, restoreNote, toggleFavorite, filterNotes}}>
             {children}
         </NotesContext.Provider>
     )
